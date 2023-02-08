@@ -39,6 +39,23 @@
         Other:		0
         Combined:	12 # текущее кол-во очередей
         ```
+    * Статистика по обработке пакетов на уровне `RX`/`TX` очередей:
+
+        ```bash
+        ethtool -S eth0
+        NIC statistics:
+            rx_queue_0_packets: 103250162
+            rx_queue_0_bytes: 8915117437
+            rx_queue_0_drops: 0
+            ...
+
+        cat /sys/class/net/eth0/statistics/rx_packets
+        72972698163
+
+        cat /sys/class/net/eth0/statistics/rx_dropped
+        0
+        ```
+
 3. **NIC** оповещает систему о поступившем пакете через механизм [Hardware Interrupt Request (IRQ)](https://en.wikipedia.org/wiki/Interrupt_request_(PC_architecture))
 4. Отрабатывает обработчик прерывания;
 
