@@ -6,4 +6,5 @@
 
 ### Заметки
 
-* [What happens when... или что происходит когда прилетает сетевой пакет](what-happens-when-packet-arived.md)
+* [What happens when... или что происходит когда прилетает сетевой пакет](network/what-happens-when-packet-arived.md)
+* [Балансировка в Kubernetes на примере инцидента с coreDNS](kubernetes/svc-k8s-balancing.md)
