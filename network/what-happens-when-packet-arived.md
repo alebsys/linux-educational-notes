@@ -70,7 +70,7 @@
     Подробнее про механизм ассинхронной обработки пакетов [NAPI](https://en.wikipedia.org/wiki/New_API).
 * (если [Receive packet steering (RPS)](https://lwn.net/Articles/362339/) включен:
     * `ksoftirqd/X` тред перекладывает пакет из `RX` в `input_pkt_queue` очередь.
-        Емкость `input_pkt_queue` задается в `net.core.netdev_max_backlog`.
+        Емкость `input_pkt_queue` задается в `net.core.netdev_max_backlog`. Отслеживать переполнение очереди можно по второму полю в [/proc/net/softnet_stat](https://insights-core.readthedocs.io/en/latest/shared_parsers_catalog/softnet_stat.html)
     * Пакет вычитывается из `input_pkt_queue` для продвижения вверх по сетевому стеку
 6. Пакет передается на обработку сетевым стеком linux
 7. TODO Тут будет про L2 OSI
